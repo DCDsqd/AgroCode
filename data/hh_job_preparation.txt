@@ -1,0 +1,100 @@
+#функция обработки названий работ из резюме 
+
+def hh_job_preparation(string):
+    global global_counter_modify_jobs
+
+    result = string.lower()
+
+    temp_string = result
+
+    result = result.replace("зам. ", "заместитель ")
+    result = result.replace("нач. ", "начальник ")
+    result = result.replace("рук. ", "руководитель ")
+    result = result.replace("ген. ", "генеральный ")
+    result = result.replace("гендиректор", "генеральный директор")
+    result = result.replace("–", "-")
+    result = result.replace(" - ", "-")
+
+    if (result.find("(")>0 and result.find(")")>0):
+        temp = ""
+        not_closed = False
+        for i in range(len(result)):
+            if result[i] == "(":
+                not_closed = True
+            elif result[i] == ")":
+                not_closed = False
+            else:
+                if not not_closed:
+                    temp += result[i]
+        result = temp
+
+    if (result.find("«")>0 and result.find("»")>0):
+        temp = ""
+        not_closed = False
+        for i in range(len(result)):
+            if result[i] == "«":
+                not_closed = True
+            elif result[i] == "»":
+                not_closed = False
+            else:
+                if not not_closed:
+                    temp += result[i]
+        result = temp
+
+
+    if (result.find(",") > 0) :
+        result=result.partition(',')[0]
+
+    if (result.find(";") > 0) :
+        result=result.partition(';')[0]
+
+    if (result.find(".") > 0) :
+        result=result.partition('.')[0]
+
+    if (result.find("/") > 0) :
+        result=result.partition('/')[0]
+
+    if (result.find(" по ") > 0) :
+        result=result.partition(' по ')[0]
+
+
+    if (result.find("начальник ") > -1 or result.find("руководитель ") > -1):
+        if (result.find("отдела") > -1):
+            result = "начальник отдела"
+        elif (result.find("службы") > -1):
+            result = "начальник службы"
+        elif (result.find("управления") > -1):
+            result = "начальник управления"
+        elif (result.find("подразделения") > -1):
+            result = "начальник подразделения"
+        elif (result.find("группы") > -1):
+            result = "начальник группы"
+
+
+
+
+    if (result.find("заместитель начальника") > -1 or result.find("заместитель руководителя ") > -1):
+        if (result.find("отдела") > -1):
+            result = "заместитель начальника отдела"
+        elif (result.find("службы") > -1):
+            result = "заместитель начальника службы"
+        elif (result.find("управления") > -1):
+            result = "заместитель начальника управления"
+        elif (result.find("подразделения") > -1):
+            result = "заместитель начальника подразделения"
+        elif (result.find("группы") > -1):
+            result = "заместитель начальника группы"
+
+    if (result.find("developer") > -1 or result.find("programmer") > -1 ):
+        result="программист"
+
+    if (result.find("генеральный директор") > -1 or result.find("programmer") > -1 ):
+        result="генеральный директор"
+
+    result=result.strip()
+
+    if (result != temp_string):
+        global_counter_modify_jobs = global_counter_modify_jobs +1
+
+
+    return(result)

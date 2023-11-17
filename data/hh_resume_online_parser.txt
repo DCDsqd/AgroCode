@@ -1,0 +1,52 @@
+# получает на вход страницу hh и вызывает функции сохранения в БД данных
+def hh_resume_online_parser(input_file):
+    from requests_html import HTML
+    resume = HTML(html=input_file)
+
+    time = []
+    job = []
+    type = []
+
+    resume_experience = resume.find('div[data-qa=resume-block-experience]')
+    resume_experience_len = len(resume_experience)
+    if (resume_experience_len == 1 ):
+        resume_times = resume_experience[0].find('.bloko-column.bloko-column_xs-4.bloko-column_s-2.bloko-column_m-2.bloko-column_l-2')
+        resume_jobs = resume_experience[0].find   ('div[data-qa=resume-block-experience-position]')
+        for i in range(len(resume_jobs)):  # смотрим места работы
+            time.append(hh_time_preparation(resume_times[i].text))
+            job.append(hh_job_preparation(resume_jobs[i].text))
+            type.append(10)
+    
+    # Фрагмент парсинга образования, не используется
+    #resume_education = resume.find('div[data-qa=resume-block-education]')
+    #resume_education_len = len(resume_education)
+    #if (resume_education_len == 1):
+    #    # education_time = resume_education[0].find('bloko-column bloko-column_xs-4 bloko-column_s-2 bloko-column_m-2 bloko-column_l-2')
+    #    education_place = resume_education[0].find('div[data-qa=resume-block-education-name]')
+    #    if (len(education_place) == 1):
+    #        time.append(0)
+    #        job.append(hh_education_preparation(education_place[len(education_place) - 1].text))
+    #        type.append(9)
+    #    else:
+    #        print("Много образований")
+    #        return 0
+    #elif (resume_education_len == 0):
+    #    print("Без образования")
+    #else:
+    #    print("Некорректное резюме, количество resume-block-education = " + str(resume_education_len))
+
+        for i in range(len(job)):
+            db_professions_update(job[i],type[i])
+            if ((i > 0) and (time[i] != 10000) ):
+                db_growths_update(job[i], job[i-1], time[i])
+        time.clear()
+        job.clear()
+        return 1
+
+    elif (resume_experience_len == 0):
+        print("Не удалось открыть резюме")
+        return 0
+    
+    else:
+        print("Некорректное резюме, количество resume-block-experience = "+str(resume_experience_len))
+        return 0
