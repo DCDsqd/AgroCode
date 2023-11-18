@@ -1,6 +1,7 @@
 {
     "canon_job_names_top_percentile": 5,
     "try_to_find_canon_in_bottom_percentile": 60,
+    "activate_spell_check": false,
     "abbreviation_dict": {
         "вет": "ветеринарный",
         "гл": "главный",
