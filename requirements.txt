@@ -1,0 +1,16 @@
+beautifulsoup4
+pandas
+autocorrect
+translators
+roman
+python-dateutil
+numpy
+nltk
+pymorphy2
+scikit-learn
+transformers
+pycaret
+matplotlib
+deap
+networkx
+torch
