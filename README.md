@@ -6,11 +6,11 @@
 запуск ```python main.py```
 
 ## Где искать таблицу кластеров:
-```db/normalized_data.db``` в таблице ```clusters```
+```db/normalized_data.db``` в таблице ```clusters```</br>
 
-```cluster == -1``` - выбросы
-```cluster == -2``` - слишком маленький стаж работы
-```cluster == -3``` - не имеет смысла
+```cluster == -1``` - выбросы</br>
+```cluster == -2``` - слишком маленький стаж работы</br>
+```cluster == -3``` - название не имеет смысла (или погрешности парса)</br>
 
 ## Как настроить [config.json](https://github.com/DCDsqd/AgroCode/blob/main/cfg/config.json)
 Пояснения для всех значений конфига: </br></br>
