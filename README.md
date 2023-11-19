@@ -5,6 +5,9 @@
 pip install -r requirements.txt</br></br>
 запуск main.py
 
+## Как искать таблицу кластеров:
+db/normalized_data.db
+
 ## Как настроить [config.json](https://github.com/DCDsqd/AgroCode/blob/main/cfg/config.json)
 Пояснения для всех значений конфига: </br></br>
 ### ```DBSCAN_epsilon``` 
