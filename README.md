@@ -2,11 +2,11 @@
 
 ## Иструкция по запуску
 
-pip install -r requirements.txt</br></br>
-запуск main.py
+```pip install -r requirements.txt```</br></br>
+запуск ```python main.py```
 
-## Как искать таблицу кластеров:
-db/normalized_data.db
+## Где искать таблицу кластеров:
+```db/normalized_data.db```
 
 ## Как настроить [config.json](https://github.com/DCDsqd/AgroCode/blob/main/cfg/config.json)
 Пояснения для всех значений конфига: </br></br>
