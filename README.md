@@ -5,6 +5,8 @@
 ```pip install -r requirements.txt```</br></br>
 Запуск ```python main.py```
 
+```Docker``` не работает :)
+
 ## Где искать таблицу кластеров:
 ```db/normalized_data.db``` в таблице ```clusters```</br>
 
