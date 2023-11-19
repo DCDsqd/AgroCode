@@ -3,7 +3,7 @@
 ## Иструкция по запуску
 
 ```pip install -r requirements.txt```</br></br>
-запуск ```python main.py```
+Запуск ```python main.py```
 
 ## Где искать таблицу кластеров:
 ```db/normalized_data.db``` в таблице ```clusters```</br>
