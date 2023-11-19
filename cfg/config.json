@@ -2,6 +2,7 @@
     "canon_job_names_top_percentile": 15,
     "try_to_find_canon_in_bottom_percentile": 85,
     "activate_spell_check": true,
+    "lemmatize_job_names": false,
     "abbreviation_dict": {
         "вет": "ветеринарный",
         "гл": "главный",
@@ -14,7 +15,8 @@
         "ст": "старший",
         "кат": "категория",
         "кл": "класс",
-        "и о": "исполняющий обязанности",
+        "и о": "",
+        "исполняющий обязанности": "",
         "мтк": "медицина",
         "call-центра": "колл-центра",
         "call-центр": "колл-центр",
