@@ -4,10 +4,12 @@
     "DBSCAN_epsilon_mutation_gens": 30,
     "DBSCAN_epsilon_mutation_range_min": 0.5,
     "DBSCAN_epsilon_mutation_range_max": 10.0,
-    "use_persons_expirience_at_the_time_of_getting_job": true,
+    "use_persons_expirience_at_the_time_of_getting_job": false,
     "expirience_at_the_time_of_getting_job_weight": 0.25,
+    "apply_eng_to_ru_translation": true,
     "canon_job_names_top_percentile": 15,
     "try_to_find_canon_in_bottom_percentile": 85,
+    "tokenizer_max_length": 24,
     "activate_spell_check": true,
     "lemmatize_job_names": false,
     "abbreviation_dict": {
