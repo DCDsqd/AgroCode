@@ -3,7 +3,7 @@
 ## Иструкция по запуску
 
 ```pip install -r requirements.txt```</br></br>
-Запуск ```python main.py```
+Запуск ```python src/main.py```
 
 ```Docker``` не работает :)
 
